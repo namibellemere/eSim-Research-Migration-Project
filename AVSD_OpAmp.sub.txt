@@ -1,0 +1,6 @@
+* AVSD OPAMP SPICE MODEL
+.subckt AVSD_OPAMP 1 2 3 4 5
+* Pins: non-inv inv output Vcc- Vcc+
+* 10
+.model OPAMP_MODEL opamp
+.ends AVSD_OPAMP

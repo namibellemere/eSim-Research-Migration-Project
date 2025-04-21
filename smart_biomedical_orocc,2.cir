@@ -1,0 +1,7 @@
+.title KiCad schematic
+v1 Net-_R1-Pad2_ GND sine
+R1 VCC Net-_R1-Pad2_ 10k
+R2 GND Net-_R2-Pad2_ 100 k
+X1 VCC /-5v Net-_R1-Pad2_ Net-_R2-Pad2_ Net-_X1-Pad5_ GND avsd_opamp
+v2 GND /-5v DC
+.end

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\gosai\eSim-Workspace\smart_biomedical_processor\smart_biomedical_processor.kicad_sch</source>
+    <date>4/8/2025 4:58:35 PM</date>
+    <tool>Eeschema (6.0.11)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>smart_biomedical_processor.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="R1">
+      <value>10k</value>
+      <libsource lib="eSim_Devices" part="resistor" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="smart_biomedical_processor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3f1b58d9-71e4-4f38-84f7-0a091d005f3c</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>100k</value>
+      <libsource lib="eSim_Devices" part="resistor" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="smart_biomedical_processor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>113503b6-4d4e-433f-944a-3e7dcdd37c08</tstamps>
+    </comp>
+    <comp ref="v1">
+      <value>sine</value>
+      <footprint>R1</footprint>
+      <libsource lib="eSim_Sources" part="sine" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="smart_biomedical_processor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>35f5f2ee-c6eb-4c58-9e49-0323d94d0591</tstamps>
+    </comp>
+    <comp ref="X1">
+      <value>avsd_opamp</value>
+      <libsource lib="eSim_SKY130_Subckts" part="avsd_opamp" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="smart_biomedical_processor.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9f2c7a1-5ec3-4fe5-b9ad-4bb290240c3c</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="eSim_Devices" part="resistor">
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="eSim_SKY130_Subckts" part="avsd_opamp">
+      <fields>
+        <field name="Reference">X</field>
+        <field name="Value">avsd_opamp</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vdd" type="input"/>
+        <pin num="2" name="Vss" type="input"/>
+        <pin num="3" name="in1" type="input"/>
+        <pin num="4" name="in2" type="input"/>
+        <pin num="5" name="out" type="input"/>
+        <pin num="6" name="gnd" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="eSim_Sources" part="sine">
+      <footprints>
+        <fp>1_pin</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">v</field>
+        <field name="Value">sine</field>
+        <field name="Footprint">R1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="input"/>
+        <pin num="2" name="-" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="eSim_Devices">
+      <uri>C:\FOSSEE\KiCad\share\kicad\symbols\/eSim_Devices.kicad_sym</uri>
+    </library>
+    <library logical="eSim_SKY130_Subckts">
+      <uri>C:\FOSSEE\KiCad\share\kicad\symbols\/eSim_SKY130_Subckts.kicad_sym</uri>
+    </library>
+    <library logical="eSim_Sources">
+      <uri>C:\FOSSEE\KiCad\share\kicad\symbols\/eSim_Sources.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="X1" pin="2" pinfunction="Vss" pintype="input"/>
+    </net>
+    <net code="2" name="Net-(v1-Pad2)">
+      <node ref="X1" pin="3" pinfunction="in1" pintype="input"/>
+      <node ref="v1" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="3" name="VCC">
+      <node ref="X1" pin="1" pinfunction="Vdd" pintype="input"/>
+    </net>
+    <net code="4" name="unconnected-(R1-Pad1)">
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="unconnected-(R1-Pad2)">
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="6" name="unconnected-(R2-Pad1)">
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="7" name="unconnected-(R2-Pad2)">
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="unconnected-(X1-Pad4)">
+      <node ref="X1" pin="4" pinfunction="in2" pintype="input"/>
+    </net>
+    <net code="9" name="unconnected-(X1-Pad5)">
+      <node ref="X1" pin="5" pinfunction="out" pintype="input"/>
+    </net>
+    <net code="10" name="unconnected-(X1-Pad6)">
+      <node ref="X1" pin="6" pinfunction="gnd" pintype="input"/>
+    </net>
+    <net code="11" name="unconnected-(v1-Pad1)">
+      <node ref="v1" pin="1" pinfunction="+" pintype="input"/>
+    </net>
+  </nets>
+</export>

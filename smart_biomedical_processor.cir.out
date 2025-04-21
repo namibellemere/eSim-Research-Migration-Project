@@ -1,0 +1,18 @@
+.title kicad schematic
+
+.include avsd_opamp.sub
+r1 vcc net-_r1-pad2_ 10k
+v1 net-_r1-pad2_ gnd sine(10 10 10 10 1)
+r2 gnd net-_r2-pad2_ 100k
+rl1 net-_rl1-pad1_ vcc 10
+x1 vcc /-5v net-_r1-pad2_ net-_r2-pad2_ net-_rl1-pad1_ gnd avsd_opamp
+v2 gnd /-5v  dc 50
+.tran 1e-00 10e-00 3e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+.endc
+.end
